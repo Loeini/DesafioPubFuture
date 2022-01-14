@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd557a9c-0ce2-451c-b234-857e14f8952c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Config/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Routes/index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Start.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/contas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/despesas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/index.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/receitas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Routes/contas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Routes/despesas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Routes/receitas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schemas/contas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schemas/despesas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schemas/index.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schemas/receitas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Start.py" beforeDir="false" afterPath="$PROJECT_DIR$/Start.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
