@@ -1,7 +1,9 @@
 from fastapi import APIRouter
 from Config.database import conexao
-from Models.index import contas
+from Models.index import contas, despesas, receitas
 from Schemas.index import Contas
+import datetime
+
 
 conta = APIRouter()
 
@@ -46,6 +48,26 @@ async def delete_account(id: int):
     return conexao.execute(contas.select()).fetchall()
 
 
-'''@conta.put("/")  # Transferir saldo entre contas
-async def transfer_data():  #???
-    conexao.execute((contas.update('''
+@conta.put("/")  # Transferir saldo entre contas
+async def transfer_data(id_origem: int, id_destino: int, valor_transferencia: float):
+    conexao.execute(despesas.insert().values(
+        id_conta=id_origem,
+        valor=valor_transferencia,
+        data_pagamento=datetime.date.today(),
+        data_pegamento_esperado=datetime.date.today(),
+        tipo_despesa='Transferencia.',
+    ))
+    conexao.execute(receitas.insert().values(
+        id_conta=id_destino,
+        valor=valor_transferencia,
+        data_recebimento=datetime.date.today(),
+        data_recebimento_esperado=datetime.date.today(),
+        tipo_receita='Transferencia.',
+        descricao='Transferencia.'
+    ))
+    saldo_origem = conexao.execute(contas.select(contas.saldo).where(contas.c.id == id_origem))
+    saldo_destino = conexao.execute(contas.select(contas.saldo).where(contas.c.id == id_destino))
+    conexao.execute(contas.update(saldo=saldo_origem - valor_transferencia).where(contas.c.id == id_origem))
+    conexao.execute(contas.update(saldo=saldo_destino + valor_transferencia).where(contas.c.id == id_destino))
+    return conexao.execute(contas.select()).fetchall()
+

@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cd557a9c-0ce2-451c-b234-857e14f8952c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/contas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/contas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/despesas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/despesas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/receitas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/receitas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/contas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/contas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/despesas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/despesas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/receitas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/receitas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schemas/despesas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Schemas/despesas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schemas/receitas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Schemas/receitas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Start.py" beforeDir="false" afterPath="$PROJECT_DIR$/Start.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,6 +124,18 @@
       <option name="presentableId" value="Default" />
       <updated>1641905004615</updated>
     </task>
+    <task id="LOCAL-00001" summary="Atualização">
+      <created>1642203751858</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642203751858</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Atualização" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização" />
   </component>
 </project>

@@ -5,7 +5,7 @@ from Config.database import meta
 
 contas = Table(
     'contas', meta,
-    Column('id', Integer, Primary_key=True),
+    Column('id', Integer, primary_key=True),
     Column('usuario', String(255)),
     Column('saldo', Float),
     Column('tipo_conta', String(255)),

@@ -5,7 +5,7 @@ from Config.database import meta
 
 despesas = Table(
     'despesas', meta,
-    Column('id', Integer, Primary_key=True),
+    Column('id', Integer, primary_key=True),
     Column('id_conta', Integer),
     Column('valor', Float),
     Column('data_pagamento', Date),  # tipo data??
