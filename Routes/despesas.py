@@ -8,12 +8,12 @@ import datetime
 despesa = APIRouter()
 
 
-@despesa.get("/")  # Busca sem filtro, busca todas as despesa. OK
+@despesa.get("/")  # Busca sem filtro, busca todas as despesa.
 async def read_all_expense():
     return conexao.execute(despesas.select()).fetchall()
 
 
-@despesa.get("/:{id_conta}")  # Busca com filtro de conta. OK
+@despesa.get("/:{id_conta}")  # Busca com filtro de conta.
 async def read_expense_by_account_id(id_conta: int):
     return conexao.execute(despesas.select().where(despesas.c.id_conta == id_conta)).fetchall()
 
@@ -39,8 +39,7 @@ async def write_expense(despesa: Despesas):
         data_pagamento_esperado=despesa.data_pagamento_esperado,
         tipo_despesa=despesa.tipo_despesa
     ))
-    saldo_atual = conexao.execute(contas.select(contas.saldo).where(contas.c.id == despesa.id_conta))
-    conexao.execute(contas.update(saldo=saldo_atual - despesa.valor).where(contas.c.id == despesa.id_conta))
+    conexao.execute(contas.update().values(saldo=(contas.c.saldo - despesa.valor)).where(contas.c.id == despesa.id_conta))
     return conexao.execute(despesas.select().where(despesas.c.id_conta == despesa.id_conta)).fetchall()
 
 

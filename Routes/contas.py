@@ -19,7 +19,7 @@ async def read_account_by_id(id: int):
 
 
 @conta.get("/:{id}")  # Busca do saldo pela id da conta.
-async def read_balance_by_id(id: int):  # esse saldo é valido?
+async def read_balance_by_id(id: int):
     return conexao.execute(contas.select(contas.saldo).where(contas.c.id == id)).fetchall()
 
 
