@@ -28,6 +28,7 @@ async def write_account(conta: Contas):
     conexao.execute(contas.insert().values(
         usuario=conta.usuario,
         tipo_conta=conta.tipo_conta,
+        saldo=0,
         instituicao_financeira=conta.instituicao_financeira
     ))
     return conexao.execute(contas.select()).fetchall()
@@ -54,20 +55,16 @@ async def transfer_data(id_origem: int, id_destino: int, valor_transferencia: fl
         id_conta=id_origem,
         valor=valor_transferencia,
         data_pagamento=datetime.date.today(),
-        data_pegamento_esperado=datetime.date.today(),
-        tipo_despesa='Transferencia.',
+        tipo_despesa='Transferencia.'
     ))
     conexao.execute(receitas.insert().values(
         id_conta=id_destino,
         valor=valor_transferencia,
         data_recebimento=datetime.date.today(),
-        data_recebimento_esperado=datetime.date.today(),
         tipo_receita='Transferencia.',
         descricao='Transferencia.'
     ))
-    saldo_origem = conexao.execute(contas.select(contas.saldo).where(contas.c.id == id_origem))
-    saldo_destino = conexao.execute(contas.select(contas.saldo).where(contas.c.id == id_destino))
-    conexao.execute(contas.update(saldo=saldo_origem - valor_transferencia).where(contas.c.id == id_origem))
-    conexao.execute(contas.update(saldo=saldo_destino + valor_transferencia).where(contas.c.id == id_destino))
+    conexao.execute(contas.update().values(saldo=contas.c.saldo - valor_transferencia).where(contas.c.id == id_origem))
+    conexao.execute(contas.update().values(saldo=contas.c.saldo + valor_transferencia).where(contas.c.id == id_destino))
     return conexao.execute(contas.select()).fetchall()
 

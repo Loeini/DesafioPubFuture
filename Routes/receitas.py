@@ -2,7 +2,8 @@ from fastapi import APIRouter
 from Config.database import conexao
 from Models.index import receitas
 from Schemas.index import Receitas
-from Models.contas import contas
+from Models.index import contas
+from Schemas.index import Contas
 import datetime
 
 receita = APIRouter()
@@ -40,13 +41,12 @@ async def write_income(receita: Receitas):
         tipo_receita=receita.tipo_receita,
         descricao=receita.descricao
     ))
-    saldo_atual = conexao.execute(contas.select(contas.saldo).where(contas.c.id == receita.id_conta))
-    conexao.execute(contas.update(saldo=saldo_atual + receita.valor).where(contas.c.id == receita.id_conta))
+    conexao.execute(contas.update().values(saldo = (contas.c.saldo + receita.valor)).where(contas.c.id == receita.id_conta))
     return conexao.execute(receitas.select().where(receitas.c.id_conta == receita.id_conta)).fetchall()
 
 
 @receita.put("/{id}")  # Edição de receita.
-async def update_income(id: int):
+async def update_income(id: int, receita:Receitas):
     valor_anterior = conexao.execute(receitas.select(receitas.valor).where(receitas.c.id == id))
     conexao.execute((receitas.update(
         valor=receita.valor,
@@ -69,4 +69,3 @@ async def delete_income(id: int):
     conexao.execute(receitas.delete().where(receitas.c.id == id))
     conexao.execute(contas.update(saldo=saldo_atual - valor_receita).where(contas.c.id == id_conta))
     return conexao.execute(receitas.select()).fetchall()
-

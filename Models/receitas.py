@@ -5,7 +5,7 @@ from Config.database import meta
 
 receitas = Table(
     'receitas', meta,
-    Column('id', Integer, primary_key=True),
+    Column('id', Integer, autoincrement=True, primary_key=True, nullable=False),
     Column('id_conta', Integer),
     Column('valor', Float),
     Column('data_recebimento', Date),

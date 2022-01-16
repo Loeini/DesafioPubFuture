@@ -5,10 +5,10 @@ from Config.database import meta
 
 despesas = Table(
     'despesas', meta,
-    Column('id', Integer, primary_key=True),
+    Column('id', Integer, autoincrement=True, primary_key=True, nullable=False),
     Column('id_conta', Integer),
     Column('valor', Float),
-    Column('data_pagamento', Date),  # tipo data??
+    Column('data_pagamento', Date),
     Column('data_pagamento_esperado', Date),
     Column('tipo_despesa', String(255))
 )

@@ -9,10 +9,9 @@
       <change beforePath="$PROJECT_DIR$/Models/contas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/contas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/despesas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/despesas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/receitas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/receitas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/contas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/contas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/despesas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/despesas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/receitas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/receitas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Start.py" beforeDir="false" afterPath="$PROJECT_DIR$/Start.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642203751858</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Atualização">
+      <created>1642357508504</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642357508504</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
