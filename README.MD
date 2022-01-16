@@ -18,7 +18,7 @@
 
 ## Métodos:
 
-###na tabela contas:
+### Tabela contas:
 - read_all_account --> Busca sem filtro, busca todas as contas
   - parâmetros: sem parâmetros;
 ######
@@ -41,7 +41,7 @@
   - parâmetros: **id_origem** (id da conta que sairá algum valor), **id_destino** (id da conta que receberá algum valor), **valor_transferencia** (valor a ser transferido);
 ######
 
-###na tabela receitas:
+### Tabela receitas:
 - read_all_income --> Busca sem filtro, busca todas as receitas
   - parâmetros: sem parâmetros;
 ######
@@ -64,7 +64,7 @@
   - parâmetros: **id** (id da receita cadastrada);
 ######
 
-###na tabela despesas:
+### Tabela despesas:
 - read_all_expense --> Busca sem filtro, busca todas as despesa
   - parâmetros: sem parâmetros;
 ######
