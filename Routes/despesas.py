@@ -59,10 +59,7 @@ async def update_expense(id: int):
 
 
 @despesa.delete("/{id}")  # Remover despesa.
-async def delete_expense(id: int):
-    id_conta = conexao.execute(despesas.select(despesas.id_conta).where(despesas.c.id == id))
-    valor_despesa = conexao.execute(despesas.select(despesas.valor).where(despesas.c.id == id))
-    saldo_atual = conexao.execute(contas.select(contas.saldo).where(contas.c.id == id_conta))
+async def delete_expense(id: int, id_conta: int):
+    conexao.execute(contas.update().values(saldo=contas.c.saldo + despesas.valor).where(contas.c.id == id_conta))
     conexao.execute(despesas.delete().where(despesas.c.id == id))
-    conexao.execute(contas.update(saldo=saldo_atual + valor_despesa).where(contas.c.id == id_conta))
     return conexao.execute(despesas.select()).fetchall()
